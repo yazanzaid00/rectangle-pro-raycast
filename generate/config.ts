@@ -5,53 +5,21 @@ export const config: Config = {
     descriptionTemplate: "Resize focused window to the {titleLowerCase} of the screen.",
     generic: {
       description: "Move focused window to custom position",
-      mode: "dropdown",
+      mode: "input",
       title: "Move to Custom Position",
-      icon: "window-positions/large_specCharmTemplate.png",
+      icon: "window-positions/large_specCharmTemplate.png", // Default icon
     },
-    items: [
-      {
-        title: "Right 500 PX",
-        description: "Resize window to 500 pixels from the right.",
-        parameter: "Right 500 PX",
-        icon: "window-positions/large_specCharmTemplate.png"
-      },
-      {
-        title: "Left 500 PX",
-        description: "Resize window to 500 pixels from the left.",
-        parameter: "Left 500 PX",
-        icon: "window-positions/large_specCharmTemplate.png"
-      },
-      {
-        title: "Power Point",
-        description: "Activate Power Point layout.",
-        parameter: "Power Point",
-        icon: "window-positions/large_specCharmTemplate.png"
-      },
-    ], // Include all custom positions as needed
+    items: [], // No custom positions by default
   },
   layouts: {
     descriptionTemplate: "Activate the {titleLowerCase} layout.",
     generic: {
       description: "Activate layout",
-      mode: "dropdown",
+      mode: "input",
       title: "Activate Layout",
-      icon: "window-positions/large_appToolbarTemplate.png",
+      icon: "window-positions/large_appToolbarTemplate.png", // Default icon
     },
-    items: [
-      {
-        title: "Two Displays",
-        description: "Arrange windows across two displays.",
-        parameter: "Two Displays",
-        icon: "window-positions/large_appToolbarTemplate.png"
-      },
-      {
-        title: "Focusmate Display",
-        description: "Optimize window layout for Focusmate Display.",
-        parameter: "Focusmate Display",
-        icon: "window-positions/large_centerTemplate.png"
-      },
-    ], // Include all layouts as needed
+    items: [], // No layouts by default
   },
   actions: {
     descriptionTemplate: `Resize focused window to the {titleLowerCase} of the screen.`,
@@ -165,6 +133,60 @@ export const config: Config = {
         ],
       },
       {
+        category: "Thirds",
+        items: [
+          {
+            title: "First Third",
+            icon: "window-positions/large_firstThirdTemplate.png",
+          },
+          {
+            title: "Center Third",
+            icon: "window-positions/large_centerThirdTemplate.png",
+          },
+          {
+            title: "Last Third",
+            icon: "window-positions/large_lastThirdTemplate.png",
+          },
+          {
+            title: "First Two Thirds",
+            icon: "window-positions/large_firstTwoThirdsTemplate.png",
+          },
+          {
+            title: "Center Two Thirds",
+            icon: "window-positions/large_centerTwoThirdsTemplate.png",
+          },
+          {
+            title: "Last Two Thirds",
+            icon: "window-positions/large_lastTwoThirdsTemplate.png",
+          },
+        ],
+      },
+      {
+        category: "Corner Two Thirds",
+        items: [
+          {
+            title: "Top Left Two Thirds",
+            parameter: "top-left-third",
+            icon: "window-positions/large_tlCornerTwoThirdsTemplate.png",
+          },
+          {
+            title: "Top Right Two Thirds",
+            parameter: "top-right-third",
+            icon: "window-positions/large_trCornerTwoThirdsTemplate.png",
+          },
+          {
+            title: "Bottom Left Two Thirds",
+            parameter: "bottom-left-third",
+            icon: "window-positions/large_blCornerTwoThirdsTemplate.png",
+          },
+          {
+            title: "Bottom Right Two Thirds",
+            parameter: "bottom-right-third",
+            icon: "window-positions/large_brCornerTwoThirdsTemplate.png",
+          },
+        ],
+      },
+      {
         category: "Fourths",
         items: [
           {
@@ -203,45 +225,6 @@ export const config: Config = {
           {
             title: "Last Sixth",
             icon: "window-positions/large_rightSixthTemplate.png",
-          },
-        ],
-      },
-      {
-        category: "Display",
-        descriptionTemplate: "Move focused window to {direction} {type}.",
-        items: [
-          {
-            title: "Next Display",
-            descriptionComponents: { direction: "next", type: "display" },
-            icon: "window-positions/large_nextDisplayTemplate.png",
-          },
-          {
-            title: "Previous Display",
-            descriptionComponents: { direction: "previous", type: "display" },
-            icon: "window-positions/large_prevDisplayTemplate.png",
-          },
-          {
-            title: "Next Display Centered",
-            descriptionComponents: { direction: "center next", type: "display" },
-            parameter: "next-display-ratio",
-            icon: "window-positions/large_nextDisplayCenterTemplate.png",
-          },
-          {
-            title: "Previous Display Centered",
-            descriptionComponents: { direction: "previous next", type: "display" },
-            parameter: "prev-display-ratio",
-            icon: "window-positions/large_prevDisplayCenterTemplate.png",
-          },
-          {
-            title: "Next Space",
-            descriptionComponents: { direction: "next", type: "space" },
-            icon: "window-positions/large_nextSpaceTemplate.png",
-          },
-          {
-            title: "Previous Space",
-            descriptionComponents: { direction: "previous", type: "display" },
-            parameter: "prev-space",
-            icon: "window-positions/large_prevSpaceTemplate.png",
           },
         ],
       },
@@ -309,170 +292,6 @@ export const config: Config = {
             title: "Last",
             description: "Restore the focused window to its last position.",
             icon: "window-positions/large_restore2Template.png",
-          },
-        ],
-      },
-      {
-        category: "Multiple Windows",
-        items: [
-          {
-            title: "Reveal Desktop Edge",
-            description: "Reveal the desktop edge.",
-            icon: "window-positions/revealDesktopEdge.png"
-          },
-          {
-            name: "tiles2x2",
-            title: "2x2 Tiles",
-            description: "Tile all windows in a 2x2 grid.",
-            parameter: "tile-2x2",
-            icon: "window-positions/tile2x2.png"
-          },
-          {
-            name: "tiles2x3",
-            title: "2x3 Tiles",
-            description: "Tile all windows in a 2x3 grid.",
-            parameter: "tile-2x3",
-            icon: "window-positions/tile2x3.png"
-          },
-          {
-            title: "Cascade All Windows",
-            description: "Cascade all windows.",
-            parameter: "cascade-all",
-            icon: "window-positions/cascadeAll.png"
-          },
-          {
-            title: "Cascade App Windows",
-            description: "Cascade focused app windows.",
-            parameter: "cascade-app",
-            icon: "window-positions/cascadeApp.png"
-          },
-          {
-            title: "App Next Display",
-            description: "Move focused app to the next display.",
-            icon: "window-positions/large_nextDisplayTemplate.png",
-          },
-          {
-            title: "App Previous Display",
-            description: "Move focused app to the previous display.",
-            parameter: "app-prev-display",
-            icon: "window-positions/large_prevDisplayTemplate.png",
-          },
-          {
-            title: "App Left Half",
-            description: "Resize focused app to the left half of the screen.",
-            icon: "window-positions/large_leftHalfTemplate.png",
-          },
-          {
-            title: "App Right Half",
-            description: "Resize focused app to the right half of the screen.",
-            icon: "window-positions/large_rightHalfTemplate.png",
-          },
-          {
-            title: "Tidy",
-            description: "Tidy all windows.",
-            parameter: "tile-all",
-            icon: "window-positions/large_tidyTemplate.png",
-          },
-        ],
-      },
-      {
-        category: "Stash",
-        descriptionTemplate: "Stash focused window to the {direction} of the screen.",
-        items: [
-          {
-            title: "Stash Left",
-            descriptionComponents: { direction: "left" },
-            icon: "window-positions/large_hideoutLeftTemplate.png"
-          },
-          {
-            title: "Stash Right",
-            descriptionComponents: { direction: "right" },
-            icon: "window-positions/large_hideoutRightTemplate.png"
-          },
-          {
-            title: "Stash Up",
-            descriptionComponents: { direction: "top" },
-            icon: "window-positions/large_stashUpTemplate.png"
-          },
-          {
-            title: "Stash Bottom",
-            descriptionComponents: { direction: "bottom" },
-            parameter: "stash-down",
-            icon: "window-positions/large_hideoutBottomTemplate.png"
-          },
-          {
-            title: "Unstash",
-            description: "Unstash all stashed windows.",
-            icon: "window-positions/large_restoreTemplate.png"
-          },
-          {
-            title: "Stash All",
-            description: "Stash all windows.",
-            icon: "window-positions/large_stashAllTemplate.png",
-          },
-          {
-            title: "Stash All Except One",
-            description: "Stash all windows except focused window.",
-            parameter: "stash-all-but-front",
-            icon: "window-positions/large_stashAllButFront.png",
-          },
-          {
-            title: "Cycle All Stashed",
-            description: "Cycle through all stashed windows.",
-            parameter: "cycle-stashed",
-            icon: "window-positions/large_cycleStashedTemplate.png",
-          },
-          {
-            title: "Toggle All Stashed",
-            description: "Toggle all stashed windows.",
-            parameter: "toggle-stashed",
-            icon: "window-positions/large_toggleTuckedTemplate.png",
-          },
-          {
-            title: "Unstash All",
-            description: "Unstash all windows.",
-            icon: "window-positions/unstashAllLargeTemplate.png"
-          },
-        ],
-      },
-      {
-        category: "Pin",
-        items: [
-          {
-            title: "Pin",
-            description: "Pin focused window.",
-            icon: "window-positions/pinTemplate.png"
-          },
-          {
-            title: "Reflow Pin",
-            description: "Reflow pinned windows.",
-            parameter: "reflow-pin",
-            icon: "window-positions/toggleAllLargeTemplate.png"
-          },
-        ],
-      },
-      {
-        category: "Control",
-        items: [
-          {
-            title: "Close",
-            description: "Close focused window.",
-            icon: "window-positions/closeCharmTemplate.png"
-          },
-          {
-            title: "Hide App",
-            description: "Hide focused app.",
-            icon: "window-positions/hideCharmTemplate.png"
-          },
-          {
-            title: "Minimize",
-            description: "Minimize focused window.",
-            icon: "window-positions/minimizeCharmTemplate.png"
-          },
-          {
-            title: "Quit App",
-            description: "Quit focused app.",
-            icon: "window-positions/quitCharmTemplate.png"
           },
         ],
       },
